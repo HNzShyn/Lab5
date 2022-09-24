@@ -13,8 +13,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
-    var name  = "Cloud Computing";//String
-    var code = 1644;//nt
+    let name  = "Cloud Computing";//String
+    let code = 1644;//nt
     //pass dữ liệu từ back-end sang front-end
     //cú pháp: name (data) : value (data)
     //gửi dữ liệu là value và nhận với tên là name
@@ -22,13 +22,14 @@ app.get("/", (req, res) => {
 })
 
 app.get("/mobile", (req, res) => {
-    var list = ["Iphone", "SamSung", "Oppo", "Huawei"];
+    let list = ["Iphone", "SamSung", "Oppo", "Huawei"];
 
     res.render("mobile", {mobile: list})
 })
 
 app.get("/laptop", (req, res) => {
-    res.render("laptop");
+    let list = ["Acer", "Macbook", "Huawei", "Asus", "Lenovo", "Dell"];
+    res.render("laptop", {laptop: list});
 })
 //Listen port để chạy server
 app.listen(port);
